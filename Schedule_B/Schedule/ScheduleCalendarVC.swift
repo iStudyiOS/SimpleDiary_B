@@ -4,7 +4,7 @@ import UIKit
 
 class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     
-    // MARK: -Outlet
+    // MARK:- Outlet
    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var nextCalendarView: UICollectionView!
@@ -13,48 +13,37 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollCalendarView: UIScrollView!
     @IBOutlet weak var datePickerModal: UIView!
     
+    // MARK:- User intents
+    
     @IBAction func tapSearchButton(_ sender: Any) {
         
     }
-    
-    // MARK: -Scroll View
-    
-    private var currentCalendarVC = SingleCalendarViewController()
-    private var prevCalendarVC = SingleCalendarViewController()
-    private var nextCalendarVC = SingleCalendarViewController()
-    
-    
-    // MARK: -User intents
-    
-    // MARK: Tap calendar cell
+
     @objc private func tapCalenderCell(sender: UITapGestureRecognizer) {
         let cell = sender.view as! CalendarCellVC
         // Todo: Show daily view
         let date = cell.hostingController.rootView.date
-        if date != nil {
-            print("\(date!) is selected")
-        }
+        
     }
-    // MARK: Scroll calendar
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x > 30 && scrollView.contentOffset.x < 780 {
             return
         }
-        let firstDate = scrollView.contentOffset.x < 30 ?  Calendar.firstDateOfMonth(prevCalendarVC.monthAndYear) :
-            Calendar.firstDateOfMonth(nextCalendarVC.monthAndYear) 
-        
+        let firstDate = scrollView.contentOffset.x < 30 ?  Calendar.firstDateOfMonth(prevCalendarVC.yearAndMonth) :
+            Calendar.firstDateOfMonth(nextCalendarVC.yearAndMonth)
+
         let aMonthAgo = Date.aMonthAgo(from: firstDate)
         let aMonthAfter = Date.aMonthAfter(from: firstDate)
-        
-        currentCalendarVC.monthAndYear = (firstDate.year * 100) + firstDate.month
-        prevCalendarVC.monthAndYear = (aMonthAgo.year * 100) + aMonthAgo.month
-        nextCalendarVC.monthAndYear = (aMonthAfter.year * 100) + aMonthAfter.month
+
+        currentCalendarVC.yearAndMonth = (firstDate.year * 100) + firstDate.month
+        prevCalendarVC.yearAndMonth = (aMonthAgo.year * 100) + aMonthAgo.month
+        nextCalendarVC.yearAndMonth = (aMonthAfter.year * 100) + aMonthAfter.month
         updateLabel(with: firstDate)
         scrollView.scrollToChild(currentCalendarView)
     }
     
-    // MARK: -Date picker
+    // MARK:- Date picker
     
     private var datePicker = UIDatePicker()
     private(set) var selectedDate = Date()
@@ -81,54 +70,64 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
         hideDatePicker()
     }
     
+    //MARK:- Update trigger
+    
     @objc private func deliverDate(_ dateToDeliver: Date) {
-        currentCalendarVC.monthAndYear = (dateToDeliver.year * 100) + dateToDeliver.month
+        currentCalendarVC.yearAndMonth = (dateToDeliver.year * 100) + dateToDeliver.month
         let aMonthAgo = Date.aMonthAgo(from: dateToDeliver)
-        prevCalendarVC.monthAndYear = (aMonthAgo.year * 100) + aMonthAgo.month
+        prevCalendarVC.yearAndMonth = (aMonthAgo.year * 100) + aMonthAgo.month
         let aMonthAfter = Date.aMonthAfter(from: dateToDeliver)
-        nextCalendarVC.monthAndYear = (aMonthAfter.year * 100) + aMonthAfter.month
+        nextCalendarVC.yearAndMonth = (aMonthAfter.year * 100) + aMonthAfter.month
         updateLabel(with: dateToDeliver)
     }
     
-    // MARK: - Month Label
     private func updateLabel(with date: Date)  {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM YYYY"
         monthLabel.text = formatter.string(from: date)
     }
     
-    // MARK: Init
+    // MARK:- Init
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    // MARK:- Scroll View controller
+    
+    private let today = Date()
+    
+    lazy private var currentCalendarVC =  SingleCalendarViewController(withCalendar: currentCalendarView, on: (today.year * 100) + today.month)
+    lazy private var prevCalendarVC = SingleCalendarViewController(withCalendar: prevCalendarView, on: (Date.aMonthAgo(from: today).year * 100) + Date.aMonthAgo(from: today).month)
+    lazy private var nextCalendarVC =
+        SingleCalendarViewController(withCalendar: nextCalendarView, on:(Date.aMonthAgo(from: today).year * 100) + Date.aMonthAgo(from: today).month)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         overrideUserInterfaceStyle = .light
         scrollCalendarView.delegate = self
-        assignViewForEachCalendar()
+        updateLabel(with: today)
         initDatePicker()
-        deliverDate(Date())
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        scrollCalendarView.scrollToChild(currentCalendarView)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        scrollCalendarView.scrollToChild(currentCalendarView)
         deliverDate(Date())
-        
-    }
-    
-    private func assignViewForEachCalendar() {
-        prevCalendarVC.calendarView = prevCalendarView
-        currentCalendarVC.calendarView = currentCalendarView
-        nextCalendarVC.calendarView = nextCalendarView
     }
     private func initDatePicker() {
         datePickerModal.layer.borderWidth = 2
-        datePickerModal.layer.borderColor = UIColor.black.cgColor
+        datePickerModal.layer.borderColor = CGColor(
+            red: 0.98, green: 0.52, blue: 0.55, alpha: 0.8)
         datePickerModal.layer.cornerRadius = 10
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline
         datePickerModal.addSubview(datePicker)
         datePicker.addTarget(self, action: #selector(selectDateInDatePicker(_:)), for: .valueChanged)
     }
-
+    
 }
 

@@ -24,6 +24,8 @@
 		CC279B9025D261CC008F337B /* CellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8825D261CC008F337B /* CellContentsView.swift */; };
 		CC279B9125D261CC008F337B /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8925D261CC008F337B /* ScrollViewExtension.swift */; };
 		CC279B9225D261CC008F337B /* SingleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */; };
+		CCE2E16F25D2B1ED0070A8D2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */; };
+		CCE2E17225D2B71E0070A8D2 /* ScheduleModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		CC279B8825D261CC008F337B /* CellContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellContentsView.swift; sourceTree = "<group>"; };
 		CC279B8925D261CC008F337B /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCalendarVC.swift; sourceTree = "<group>"; };
+		CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +102,11 @@
 			children = (
 				CCEC6B5625D28E86006EEB64 /* Helper */,
 				CC279B8725D261CC008F337B /* ScheduleCalendarVC.swift */,
+				CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */,
 				CC279B8325D261CB008F337B /* CalenderCellController.swift */,
 				CC279B8825D261CC008F337B /* CellContentsView.swift */,
 				CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */,
+				CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
 				1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */,
 				CC279B8C25D261CC008F337B /* UIViewExtension.swift in Sources */,
+				CCE2E16F25D2B1ED0070A8D2 /* DummyData.swift in Sources */,
 				CC279B9225D261CC008F337B /* SingleCalendarVC.swift in Sources */,
+				CCE2E17225D2B71E0070A8D2 /* ScheduleModelController.swift in Sources */,
 				CC279B9125D261CC008F337B /* ScrollViewExtension.swift in Sources */,
 				1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */,
 			);
