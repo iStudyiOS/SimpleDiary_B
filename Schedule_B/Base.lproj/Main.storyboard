@@ -203,7 +203,7 @@
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="AMZ-wj-S8q" kind="show" identifier="" id="kdK-zt-v2P"/>
+                                                        <segue destination="AMZ-wj-S8q" kind="show" identifier="ShowScheduleCalendar" id="wGe-A9-zwm"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -262,26 +262,26 @@
             </objects>
             <point key="canvasLocation" x="-986" y="94"/>
         </scene>
-        <!--스케쥴 캘린더-->
+        <!--ScheduleVC-->
         <scene sceneID="lL2-L9-vcN">
             <objects>
-                <viewController storyboardIdentifier="ScheduleCalendarVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AMZ-wj-S8q" customClass="ScheduleCalendarViewController" customModule="Schedule_B" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleCalendarVC" title="ScheduleVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AMZ-wj-S8q" customClass="ScheduleCalendarViewController" customModule="Schedule_B" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMZ-iz-wLP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E6C-Bv-o2u">
-                                <rect key="frame" x="57" y="98" width="300" height="30"/>
+                                <rect key="frame" x="62" y="98" width="290" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="61" text="Fab 2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-0k-vjN">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" text="Month Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-0k-vjN">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="30" verticalHuggingPriority="30" horizontalCompressionResistancePriority="30" verticalCompressionResistancePriority="30" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="30" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fok-7p-kzt">
-                                        <rect key="frame" x="220" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="223" y="0.0" width="17" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal">
@@ -292,8 +292,8 @@
                                             <action selector="showDatePicker:" destination="AMZ-wj-S8q" eventType="touchUpInside" id="V0m-cq-M3W"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="30" verticalHuggingPriority="30" horizontalCompressionResistancePriority="30" verticalCompressionResistancePriority="30" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="30" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-Ot-0uO">
-                                        <rect key="frame" x="270" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="30" verticalHuggingPriority="30" horizontalCompressionResistancePriority="31" verticalCompressionResistancePriority="30" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="30" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-Ot-0uO">
+                                        <rect key="frame" x="260" y="0.0" width="30" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="magnifyingglass" catalog="system">
@@ -305,6 +305,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="6kX-0k-vjN" firstAttribute="width" secondItem="E6C-Bv-o2u" secondAttribute="width" multiplier="0.7" id="Wp2-uR-EY3"/>
                                     <constraint firstAttribute="height" constant="30" id="Xf8-PN-s9d"/>
                                 </constraints>
                             </stackView>
@@ -470,6 +471,7 @@
                             <constraint firstItem="E6C-Bv-o2u" firstAttribute="top" secondItem="J1S-Eq-fps" secondAttribute="top" constant="10" id="DFB-VA-K8Q"/>
                             <constraint firstItem="Eig-hL-i3M" firstAttribute="top" secondItem="Udu-e1-OvL" secondAttribute="bottom" constant="10" id="TzS-xd-egu"/>
                             <constraint firstItem="Udu-e1-OvL" firstAttribute="centerX" secondItem="MMZ-iz-wLP" secondAttribute="centerX" id="cSg-kg-S80"/>
+                            <constraint firstItem="E6C-Bv-o2u" firstAttribute="width" secondItem="MMZ-iz-wLP" secondAttribute="width" multiplier="0.7" id="dJ7-pd-eNO"/>
                             <constraint firstItem="Eig-hL-i3M" firstAttribute="leading" secondItem="J1S-Eq-fps" secondAttribute="leading" id="nC6-11-oA0"/>
                             <constraint firstItem="Udu-e1-OvL" firstAttribute="top" secondItem="E6C-Bv-o2u" secondAttribute="bottom" constant="10" id="rY5-ci-9OG"/>
                             <constraint firstItem="E6C-Bv-o2u" firstAttribute="centerX" secondItem="MMZ-iz-wLP" secondAttribute="centerX" id="tZJ-Zm-Yem"/>

@@ -17,8 +17,14 @@ class MenuViewController: UIViewController {
     super.viewDidLoad()
     self.tableView.rowHeight = CGFloat(60)
   }
-  
+  var scheduleMC: ScheduleModelController!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowScheduleCalendar", let scheduleCalendarVC = segue.destination as? ScheduleCalendarViewController{
+            scheduleCalendarVC.modelController = scheduleMC
+        }
+    }
 }
+  
 
 extension MenuViewController: UITableViewDelegate {
 }

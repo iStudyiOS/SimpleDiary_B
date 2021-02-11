@@ -4,7 +4,7 @@ import UIKit
 
 class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     
-    // MARK:- Outlet
+    weak var modelController: ScheduleModelController!
    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var nextCalendarView: UICollectionView!
@@ -16,13 +16,6 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     // MARK:- User intents
     
     @IBAction func tapSearchButton(_ sender: Any) {
-        
-    }
-
-    @objc private func tapCalenderCell(sender: UITapGestureRecognizer) {
-        let cell = sender.view as! CalendarCellVC
-        // Todo: Show daily view
-        let date = cell.hostingController.rootView.date
         
     }
     
@@ -88,19 +81,22 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK:- Init
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    // MARK:- Scroll View controller
     
     private let today = Date()
     
-    lazy private var currentCalendarVC =  SingleCalendarViewController(withCalendar: currentCalendarView, on: (today.year * 100) + today.month)
-    lazy private var prevCalendarVC = SingleCalendarViewController(withCalendar: prevCalendarView, on: (Date.aMonthAgo(from: today).year * 100) + Date.aMonthAgo(from: today).month)
+    lazy private var currentCalendarVC =  SingleCalendarViewController(
+        of: currentCalendarView,
+        on: today.toInt() / 100,
+        modelController: modelController)
+    lazy private var prevCalendarVC = SingleCalendarViewController(
+        of: prevCalendarView,
+        on: (Date.aMonthAgo(from: today).toInt() / 100),
+        modelController: modelController)
     lazy private var nextCalendarVC =
-        SingleCalendarViewController(withCalendar: nextCalendarView, on:(Date.aMonthAgo(from: today).year * 100) + Date.aMonthAgo(from: today).month)
+        SingleCalendarViewController(
+            of: nextCalendarView,
+            on:(Date.aMonthAgo(from: today).toInt() / 100),
+            modelController: modelController)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,8 +116,7 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate {
     }
     private func initDatePicker() {
         datePickerModal.layer.borderWidth = 2
-        datePickerModal.layer.borderColor = CGColor(
-            red: 0.98, green: 0.52, blue: 0.55, alpha: 0.8)
+        datePickerModal.layer.borderColor = CGColor.salmon 
         datePickerModal.layer.cornerRadius = 10
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .inline

@@ -17,14 +17,15 @@
 		1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */; };
 		1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */; };
 		1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */; };
-		CC279B8B25D261CC008F337B /* CalenderCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8325D261CB008F337B /* CalenderCellController.swift */; };
+		CC279B8B25D261CC008F337B /* CalenderCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8325D261CB008F337B /* CalenderCellVC.swift */; };
 		CC279B8C25D261CC008F337B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8425D261CB008F337B /* UIViewExtension.swift */; };
 		CC279B8D25D261CC008F337B /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8525D261CC008F337B /* CalendarExtension.swift */; };
 		CC279B8F25D261CC008F337B /* ScheduleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8725D261CC008F337B /* ScheduleCalendarVC.swift */; };
 		CC279B9025D261CC008F337B /* CellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8825D261CC008F337B /* CellContentsView.swift */; };
 		CC279B9125D261CC008F337B /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8925D261CC008F337B /* ScrollViewExtension.swift */; };
 		CC279B9225D261CC008F337B /* SingleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */; };
-		CCE2E16F25D2B1ED0070A8D2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */; };
+		CC65AA8E25D54FF7009602C8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC65AA8D25D54FF7009602C8 /* ColorExtension.swift */; };
+		CCE2E16F25D2B1ED0070A8D2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE2E16E25D2B1ED0070A8D2 /* Schedule.swift */; };
 		CCE2E17225D2B71E0070A8D2 /* ScheduleModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,14 +41,15 @@
 		1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		CC279B8325D261CB008F337B /* CalenderCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCellController.swift; sourceTree = "<group>"; };
+		CC279B8325D261CB008F337B /* CalenderCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCellVC.swift; sourceTree = "<group>"; };
 		CC279B8425D261CB008F337B /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CC279B8525D261CC008F337B /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		CC279B8725D261CC008F337B /* ScheduleCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCalendarVC.swift; sourceTree = "<group>"; };
 		CC279B8825D261CC008F337B /* CellContentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellContentsView.swift; sourceTree = "<group>"; };
 		CC279B8925D261CC008F337B /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCalendarVC.swift; sourceTree = "<group>"; };
-		CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		CC65AA8D25D54FF7009602C8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		CCE2E16E25D2B1ED0070A8D2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,20 +103,45 @@
 			isa = PBXGroup;
 			children = (
 				CCEC6B5625D28E86006EEB64 /* Helper */,
-				CC279B8725D261CC008F337B /* ScheduleCalendarVC.swift */,
-				CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */,
-				CC279B8325D261CB008F337B /* CalenderCellController.swift */,
-				CC279B8825D261CC008F337B /* CellContentsView.swift */,
-				CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */,
-				CCE2E16E25D2B1ED0070A8D2 /* DummyData.swift */,
+				CCE2E17525D3E1440070A8D2 /* View */,
+				CCE2E17725D3E16B0070A8D2 /* Model */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		CCE2E17425D3E1310070A8D2 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC279B8725D261CC008F337B /* ScheduleCalendarVC.swift */,
+				CC279B8325D261CB008F337B /* CalenderCellVC.swift */,
+				CC279B8A25D261CC008F337B /* SingleCalendarVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		CCE2E17525D3E1440070A8D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCE2E17425D3E1310070A8D2 /* View Controller */,
+				CC279B8825D261CC008F337B /* CellContentsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCE2E17725D3E16B0070A8D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCE2E17125D2B71E0070A8D2 /* ScheduleModelController.swift */,
+				CCE2E16E25D2B1ED0070A8D2 /* Schedule.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CCEC6B5625D28E86006EEB64 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				CC279B8525D261CC008F337B /* CalendarExtension.swift */,
+				CC65AA8D25D54FF7009602C8 /* ColorExtension.swift */,
 				CC279B8925D261CC008F337B /* ScrollViewExtension.swift */,
 				CC279B8425D261CB008F337B /* UIViewExtension.swift */,
 			);
@@ -202,12 +229,13 @@
 				CC279B9025D261CC008F337B /* CellContentsView.swift in Sources */,
 				CC279B8D25D261CC008F337B /* CalendarExtension.swift in Sources */,
 				CC279B8F25D261CC008F337B /* ScheduleCalendarVC.swift in Sources */,
+				CC65AA8E25D54FF7009602C8 /* ColorExtension.swift in Sources */,
 				1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */,
-				CC279B8B25D261CC008F337B /* CalenderCellController.swift in Sources */,
+				CC279B8B25D261CC008F337B /* CalenderCellVC.swift in Sources */,
 				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
 				1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */,
 				CC279B8C25D261CC008F337B /* UIViewExtension.swift in Sources */,
-				CCE2E16F25D2B1ED0070A8D2 /* DummyData.swift in Sources */,
+				CCE2E16F25D2B1ED0070A8D2 /* Schedule.swift in Sources */,
 				CC279B9225D261CC008F337B /* SingleCalendarVC.swift in Sources */,
 				CCE2E17225D2B71E0070A8D2 /* ScheduleModelController.swift in Sources */,
 				CC279B9125D261CC008F337B /* ScrollViewExtension.swift in Sources */,

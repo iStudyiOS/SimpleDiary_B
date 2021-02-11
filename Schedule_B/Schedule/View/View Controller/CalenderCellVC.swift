@@ -3,6 +3,15 @@ import SwiftUI
 
 
 class CalendarCellVC: UICollectionViewCell {
+    var cellView: CellContentsView {
+        get {
+            hostingController.rootView
+        }
+        set{
+            hostingController.rootView = newValue
+        }
+    }
+    
     // Swift UI
     var hostingController = UIHostingController(rootView: CellContentsView())
     static func size(in frameSize: CGSize) -> CGSize{

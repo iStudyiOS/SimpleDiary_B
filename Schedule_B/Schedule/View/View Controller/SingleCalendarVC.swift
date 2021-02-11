@@ -1,18 +1,19 @@
 
 
 import UIKit
+import Combine
 
 class SingleCalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var calendarView: UICollectionView
+    weak var modelController: ScheduleModelController!
+    private var observeScheduleCancellable: AnyCancellable?
+    
+    weak var calendarView: UICollectionView!
     
     private let today = Date()
-    
     private var todayToInt: Int {
-        (today.year * 10000) + (today.month * 100) + today.day
+        today.toInt()
     }
-    
-    // MARK:- Controll calendar month
     var yearAndMonth: Int{
         didSet{
             updateCalendar()
@@ -20,6 +21,15 @@ class SingleCalendarViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     private var squaresInCalendarView = [Int?]()
+    
+    // MARK:- User intents
+    @objc func tapCell(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended,
+           let cell = sender.view as? CalendarCellVC,
+           let date = cell.cellView.date{
+            print("cell tapped: \(date)")
+        }
+    }
     
     private func updateCalendar() {
         guard yearAndMonth > 190001 && yearAndMonth < 20500101 else {
@@ -53,12 +63,20 @@ class SingleCalendarViewController: UIViewController, UICollectionViewDelegate, 
         let date = squaresInCalendarView[indexPath.item]
         if date != nil {
             // toss data to cell
-            cell.hostingController.rootView.date = date
-            cell.hostingController.rootView.isToday = date! == todayToInt
+            cell.cellView.date = date
+            cell.cellView.isToday = date! == todayToInt
+            if let schedulesOfDay = modelController.scheduleTable[date!]{
+                cell.cellView.schedules = schedulesOfDay
+            }else {
+                cell.cellView.schedules.removeAll()
+            }
             // Add cell content with Swift UI
             cell.hostingController.view.translatesAutoresizingMaskIntoConstraints = false
             cell.hostingController.view.frame = cell.contentView.frame
             cell.contentView.addSubview(cell.hostingController.view)
+            cell.addGestureRecognizer(
+                UITapGestureRecognizer(target: self,
+                                       action: #selector(tapCell(_:))))
         }else {
             cell.hostingController.rootView.date = nil
             cell.hostingController.view.removeFromSuperview()
@@ -69,10 +87,14 @@ class SingleCalendarViewController: UIViewController, UICollectionViewDelegate, 
         return CalendarCellVC.size(in: (calendarView.frame.size))
     }
     
-    init(withCalendar calendarView: UICollectionView, on yearAndMonth: Int) {
+    init(of calendarView: UICollectionView, on yearAndMonth: Int, modelController: ScheduleModelController) {
         self.calendarView = calendarView
         self.yearAndMonth = yearAndMonth
+        self.modelController = modelController
         super.init(nibName: nil, bundle: nil)
+        self.observeScheduleCancellable = modelController.$scheduleTable.sink(receiveValue: { [weak weakSelf = self] table in
+            weakSelf?.updateCalendar()
+        })
         calendarView.isScrollEnabled = false
         calendarView.dataSource = self
         calendarView.delegate = self

@@ -40,16 +40,6 @@ extension Date {
     var weekDay: Int {
         Calendar.current.component(.weekday, from: self) - 1
     }
-    static func intToDate(_ int: Int) -> Date?{
-        let year = int / 10000
-        let month = (int / 100) % 100
-        let day = int % 100
-        return DateComponents(calendar: Calendar.current,
-                              timeZone: .current,
-                              year: year,
-                              month: month,
-                              day: day).date
-    }
     static func aMonthAgo(from date: Date) -> Date {
         return Calendar.current.date(
             byAdding: DateComponents(month: -1), to: date)!
@@ -61,12 +51,17 @@ extension Date {
     func isSameDay(with toCompare: Date) -> Bool {
         return self.year == toCompare.year && self.month == toCompare.month && self.day == toCompare.day
     }
+    func toInt() -> Int {
+        return (self.year * 10000) + (self.month * 100) + self.day
+    }
 }
 
 extension Int {
     func toDate() -> Date?{
-        let fommatter = DateFormatter()
-        fommatter.dateFormat = "YYYYMMDD"
-        return fommatter.date(from: String(self))
+        return DateComponents(calendar: Calendar.current,
+                              timeZone: .current,
+                              year: self / 10000,
+                              month: (self / 100) % 100,
+                              day: self % 100).date!
     }
 }

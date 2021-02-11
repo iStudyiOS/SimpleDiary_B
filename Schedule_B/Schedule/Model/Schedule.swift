@@ -2,48 +2,40 @@
 import Foundation
 
 
-struct Schedule: Codable {
-    var time: DateType
-    var priority: Int
+struct Schedule: Codable, Identifiable, Comparable {
+    //Test dummy data
     var title = "dummy title"
     var description = "dummy description"
+    //
+    var time: DateType
+    var priority: Int
+    var id = UUID()
     
     enum DateType: Codable {
         case spot (Date)
         case period (start: Date, end: Date)
     }
-
-}
-class UserData {
-    private(set) var schedules: [Schedule]
     
-    init() {
-        let date1 = DateComponents(calendar: Calendar.current,
-                                   year: 2021,
-                                   month: 2,
-                                   day: 20).date!
-        let test1 = Schedule(time: .spot(date1), priority: 1)
-        let date2 = DateComponents(calendar: Calendar.current,
-                                   year: 2021,
-                                   month: 2,
-                                   day: 10,
-                                   hour: 10).date!
-        let test2 = Schedule(time: .spot(date2), priority: 2)
-        let date3_start = DateComponents(calendar: Calendar.current,
-                                   year: 2021,
-                                   month: 2,
-                                   day: 1).date!
-        let date3_end = DateComponents(calendar: Calendar.current,
-                                   year: 2021,
-                                   month: 2,
-                                   day: 5).date!
-        let test3 = Schedule(time: .period(start: date3_start, end: date3_end), priority: 4)
-        schedules = [test1, test2, test3]
+    static func == (lhs: Schedule, rhs: Schedule) -> Bool {
+            lhs.id == rhs.id
+    }
+    
+    static func < (lhs: Schedule, rhs: Schedule) -> Bool {
+        switch (lhs.time, rhs.time) {
+        case(let .spot(dateLhs), let .spot(dateRhs)):
+            return dateLhs < dateRhs
+        case (let .spot(dateLhs), let .period(startRhs, _)):
+            return dateLhs < startRhs
+        case (let .period(startLhs, _), let .period(startRhs, _)):
+            return startLhs < startRhs
+        case (let .period(startLhs, _), let .spot(dateRhs)):
+            return startLhs < dateRhs
+        }
     }
 }
 
 
-
+//Encode to JSON
 extension Schedule.DateType {
 
     private enum CodingKeys: String, CodingKey {
@@ -51,10 +43,6 @@ extension Schedule.DateType {
         case start
         case end
         case type
-    }
-
-    enum DateTypeCodingError: Error {
-        case decoding(String)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -84,8 +72,7 @@ extension Schedule.DateType {
             let end = try container.decode(Date.self, forKey: .end)
             self = .period(start: start, end: end)
         default:
-            fatalError("Invalid Date type during decoding")
+            fatalError("Invalid Date type of schdule during decoding")
         }
-        
     }
 }
