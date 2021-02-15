@@ -42,6 +42,9 @@ extension MenuViewController: UITableViewDataSource {
     cell.menuButton.setTitle("\(menuList[indexPath.row])", for: .normal)
     return cell
   }
+<<<<<<< HEAD
   
   
+=======
+>>>>>>> origin/main
 }

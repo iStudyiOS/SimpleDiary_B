@@ -17,6 +17,13 @@
 		1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */; };
 		1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */; };
 		1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */; };
+<<<<<<< HEAD
+=======
+		B413206425DA010A009EB24C /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413206325DA010A009EB24C /* DailyViewController.swift */; };
+		B413206825DA04D5009EB24C /* DailyTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413206725DA04D5009EB24C /* DailyTopViewController.swift */; };
+		B413206B25DA04EB009EB24C /* DailyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413206A25DA04EB009EB24C /* DailyDateViewController.swift */; };
+		B413207025DA04FD009EB24C /* DailyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413206F25DA04FD009EB24C /* DailyScheduleViewController.swift */; };
+>>>>>>> origin/main
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		B413206325DA010A009EB24C /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		B413206725DA04D5009EB24C /* DailyTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTopViewController.swift; sourceTree = "<group>"; };
+		B413206A25DA04EB009EB24C /* DailyDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDateViewController.swift; sourceTree = "<group>"; };
+		B413206F25DA04FD009EB24C /* DailyScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewController.swift; sourceTree = "<group>"; };
+>>>>>>> origin/main
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 			children = (
 				1C9948B025D1128600ACDBB4 /* AppDelegate.swift */,
 				1C9948B225D1128600ACDBB4 /* SceneDelegate.swift */,
+<<<<<<< HEAD
 				1C9948B425D1128600ACDBB4 /* DiaryViewController.swift */,
 				1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */,
 				1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */,
@@ -74,6 +89,20 @@
 				1C9948BB25D1128700ACDBB4 /* LaunchScreen.storyboard */,
 				1C9948BE25D1128700ACDBB4 /* Info.plist */,
 				1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */,
+=======
+				1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */,
+				1C9948B425D1128600ACDBB4 /* DiaryViewController.swift */,
+				1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */,
+				1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */,
+				1C9948B625D1128600ACDBB4 /* Main.storyboard */,
+				B413206325DA010A009EB24C /* DailyViewController.swift */,
+				B413206725DA04D5009EB24C /* DailyTopViewController.swift */,
+				B413206A25DA04EB009EB24C /* DailyDateViewController.swift */,
+				B413206F25DA04FD009EB24C /* DailyScheduleViewController.swift */,
+				1C9948B925D1128700ACDBB4 /* Assets.xcassets */,
+				1C9948BB25D1128700ACDBB4 /* LaunchScreen.storyboard */,
+				1C9948BE25D1128700ACDBB4 /* Info.plist */,
+>>>>>>> origin/main
 			);
 			path = Schedule_B;
 			sourceTree = "<group>";
@@ -154,12 +183,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				1C9948B525D1128600ACDBB4 /* DiaryViewController.swift in Sources */,
 				1C9948B125D1128600ACDBB4 /* AppDelegate.swift in Sources */,
 				1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */,
 				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
 				1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */,
 				1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */,
+=======
+				B413206425DA010A009EB24C /* DailyViewController.swift in Sources */,
+				1C9948B525D1128600ACDBB4 /* DiaryViewController.swift in Sources */,
+				B413206B25DA04EB009EB24C /* DailyDateViewController.swift in Sources */,
+				1C9948B125D1128600ACDBB4 /* AppDelegate.swift in Sources */,
+				1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */,
+				B413206825DA04D5009EB24C /* DailyTopViewController.swift in Sources */,
+				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
+				1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */,
+				1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */,
+				B413207025DA04FD009EB24C /* DailyScheduleViewController.swift in Sources */,
+>>>>>>> origin/main
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +350,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Schedule_B/Info.plist;
+<<<<<<< HEAD
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+>>>>>>> origin/main
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,6 +372,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Schedule_B/Info.plist;
+<<<<<<< HEAD
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+>>>>>>> origin/main
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
