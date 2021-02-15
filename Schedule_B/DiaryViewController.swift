@@ -11,6 +11,14 @@ import FSCalendar
 class DiaryViewController: UIViewController {
 
   @IBOutlet weak var diaryCalendarView: FSCalendar!
+    
+    let formatter : DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .short
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "Ko_kr")
+        return f
+    }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,3 +32,23 @@ class DiaryViewController: UIViewController {
 
 }
 
+extension DiaryViewController: UITableViewDelegate{
+    
+}
+
+extension DiaryViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MemoList.dummyList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MemoListTableViewCell
+        
+        let target = MemoList.dummyList[indexPath.row]
+        cell.mainText.text = target.mianText
+        cell.subText.text = formatter.string(from: target.subText)
+        return cell
+    }
+    
+    
+}
