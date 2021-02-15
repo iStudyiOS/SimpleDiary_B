@@ -49,11 +49,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3E984D25DAAB3E00268DB0 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		1C3E984E25DAAB5000268DB0 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				1C9948B425D1128600ACDBB4 /* DiaryViewController.swift */,
+				84BDC8D225D64F5B00144860 /* MemoListTableViewCell.swift */,
+				84BDC8D525D64FD200144860 /* MemoList.swift */,
+			);
+			name = Diary;
+			sourceTree = "<group>";
+		};
+		1C3E984F25DAAB6D00268DB0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */,
+				1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		1C3E985025DAAB7E00268DB0 /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+				1C9948B625D1128600ACDBB4 /* Main.storyboard */,
+				1C9948B925D1128700ACDBB4 /* Assets.xcassets */,
+				1C9948BB25D1128700ACDBB4 /* LaunchScreen.storyboard */,
+				1C9948B225D1128600ACDBB4 /* SceneDelegate.swift */,
+				1C9948B025D1128600ACDBB4 /* AppDelegate.swift */,
+				1C9948BE25D1128700ACDBB4 /* Info.plist */,
+			);
+			name = Etc;
+			sourceTree = "<group>";
+		};
 		1C9948A425D1128600ACDBB4 = {
 			isa = PBXGroup;
 			children = (
 				1C9948AF25D1128600ACDBB4 /* Schedule_B */,
-				1C9948AE25D1128600ACDBB4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,23 +102,17 @@
 				1C9948AD25D1128600ACDBB4 /* Schedule_B.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1C9948AF25D1128600ACDBB4 /* Schedule_B */ = {
 			isa = PBXGroup;
 			children = (
-				1C9948B025D1128600ACDBB4 /* AppDelegate.swift */,
-				1C9948B225D1128600ACDBB4 /* SceneDelegate.swift */,
-				1C9948B425D1128600ACDBB4 /* DiaryViewController.swift */,
-				1CA2BC8325D249FB0044EA31 /* MenuViewController.swift */,
-				1CA2BC8725D24A6E0044EA31 /* MenuTableViewCell.swift */,
-				1C9948B625D1128600ACDBB4 /* Main.storyboard */,
-				1C9948B925D1128700ACDBB4 /* Assets.xcassets */,
-				1C9948BB25D1128700ACDBB4 /* LaunchScreen.storyboard */,
-				1C9948BE25D1128700ACDBB4 /* Info.plist */,
-				84BDC8D225D64F5B00144860 /* MemoListTableViewCell.swift */,
-				84BDC8D525D64FD200144860 /* MemoList.swift */,
-				1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */,
+				1C3E985025DAAB7E00268DB0 /* Etc */,
+				1C3E984F25DAAB6D00268DB0 /* Menu */,
+				1C3E984E25DAAB5000268DB0 /* Diary */,
+				1C3E984D25DAAB3E00268DB0 /* Schedule */,
+				1C9948AE25D1128600ACDBB4 /* Products */,
 			);
 			path = Schedule_B;
 			sourceTree = "<group>";
