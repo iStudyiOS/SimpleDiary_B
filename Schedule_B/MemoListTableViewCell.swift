@@ -8,7 +8,7 @@
 import UIKit
 
 class MemoListTableViewCell: UITableViewCell {
-    @IBOutlet weak var mainText: UILabel!
-    @IBOutlet weak var subText: UILabel!
-    
+  @IBOutlet weak var mainText: UILabel!
+  @IBOutlet weak var subText: UILabel!
+  
 }

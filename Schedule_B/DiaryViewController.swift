@@ -9,46 +9,90 @@ import UIKit
 import FSCalendar
 
 class DiaryViewController: UIViewController {
-
+  
+  @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var diaryCalendarView: FSCalendar!
-    
-    let formatter : DateFormatter = {
-        let f = DateFormatter()
-        f.dateStyle = .short
-        f.timeStyle = .short
-        f.locale = Locale(identifier: "Ko_kr")
-        return f
-    }()
+  
+  var memos = [Memo]()
+
+  let formatter : DateFormatter = {
+    let f = DateFormatter()
+    f.dateStyle = .short
+    f.timeStyle = .short
+    f.locale = Locale(identifier: "Ko_kr")
+    return f
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     diaryCalendarView.backgroundColor = UIColor(red: 241/255, green: 249/255, blue: 255/255, alpha: 1)
     diaryCalendarView.appearance.selectionColor = UIColor(red: 38/255, green: 153/255, blue: 251/255, alpha: 1)
     diaryCalendarView.appearance.todayColor = UIColor(red: 188/255, green: 224/255, blue: 253/255, alpha: 1)
     
     diaryCalendarView.scrollEnabled = true
     diaryCalendarView.scrollDirection = .vertical
+    
+    laodDummyData()
   }
+  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    
+//    super.prepare(for: segue, sender: sender)
+//
+//    switch(segue.identifier ?? "") {
+//
+//    case "AddMemo":
+//      return
+//    case "ShowDetail":
+//      guard let DetailMemoVC = segue.destination as? DetailMemoViewController else { return }
+//
+//      guard let selectedMemoCell = sender as? MemoListTableViewCell else { return }
+//
+//      guard let indexPath = tableView.indexPath(for: selectedMemoCell) else {
+//        return
+//      }
+//
+//      let selectedMemo = memos[indexPath.row]
+//      DetailMemoVC.memo = selectedMemo
+//
+//    default:
+//      return
+//    }
+//  }
 
+  @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
+    if let sourceVC = sender.source as? DetailMemoViewController, let memo = sourceVC.memo {
+      let newMemo = IndexPath(row: memos.count, section: 0)
+      memos.append(memo)
+      tableView.insertRows(at: [newMemo], with: .automatic)
+    }
+  }
+  
+  func laodDummyData() {
+    let memo1 = Memo(mainText: "메모1", contentText: "메모1 detail")
+    let memo2 = Memo(mainText: "메모2", contentText: "메모2 detail")
+    let memo3 = Memo(mainText: "메모3", contentText: "메모3 detail")
+    
+    memos += [memo1, memo2, memo3]
+  }
 }
 
 extension DiaryViewController: UITableViewDelegate{
-    
 }
 
 extension DiaryViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MemoList.dummyList.count
-    }
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return memos.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell", for: indexPath) as! MemoListTableViewCell
+    let memo = memos[indexPath.row]
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MemoListTableViewCell
-        
-        let target = MemoList.dummyList[indexPath.row]
-        cell.mainText.text = target.mianText
-        cell.subText.text = formatter.string(from: target.subText)
-        return cell
-    }
-    
-    
+    cell.mainText.text = memo.mainText
+    cell.subText.text = formatter.string(from: memo.subText)
+    return cell
+  }
 }
+

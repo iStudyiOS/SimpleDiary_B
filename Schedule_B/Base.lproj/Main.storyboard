@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="440" width="414" height="374"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="8gn-Yn-Chg" detailTextLabel="ee7-SJ-2aU" style="IBUITableViewCellStyleSubtitle" id="Wxe-31-ELt" customClass="MemoListTableViewCell" customModule="Schedule_B" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoCell" textLabel="8gn-Yn-Chg" detailTextLabel="ee7-SJ-2aU" style="IBUITableViewCellStyleSubtitle" id="Wxe-31-ELt" customClass="MemoListTableViewCell" customModule="Schedule_B" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wxe-31-ELt" id="FyI-Np-CVJ" customClass="MemoListTableViewCell" customModule="Schedule_B" customModuleProvider="target">
@@ -55,6 +55,7 @@
                                         <connections>
                                             <outlet property="mainText" destination="8gn-Yn-Chg" id="2Cg-6k-YPO"/>
                                             <outlet property="subText" destination="ee7-SJ-2aU" id="5Di-0J-b84"/>
+                                            <segue destination="jjb-mF-Fcu" kind="show" identifier="showDetail" id="hsn-O8-0VY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -76,7 +77,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jjb-mF-Fcu" kind="show" id="Cnb-rW-OP9"/>
+                                    <segue destination="kcL-Pf-9HP" kind="show" identifier="addMemo" id="xhu-k4-e52"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,6 +102,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="diaryCalendarView" destination="W2q-kA-JoA" id="5g3-hH-hlq"/>
+                        <outlet property="tableView" destination="cHl-oU-BLD" id="1pK-Kt-hi4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="696" y="821"/>
         </scene>
-        <!--View Controller-->
+        <!--메모 작성-->
         <scene sceneID="u0i-dz-buC">
             <objects>
-                <viewController id="jjb-mF-Fcu" sceneMemberID="viewController">
+                <viewController id="jjb-mF-Fcu" customClass="DetailMemoViewController" customModule="Schedule_B" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HSK-dx-kVX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,15 +232,24 @@
                             <constraint firstItem="EgK-Jn-T7l" firstAttribute="top" secondItem="fgu-O7-55I" secondAttribute="top" id="xpt-4e-f4A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CBc-S6-Yj4">
+                    <navigationItem key="navigationItem" title="메모 작성" id="CBc-S6-Yj4">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="xvt-VI-neH">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="STU-Te-4An" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="apy-vk-gf2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentsTextView" destination="taS-7l-8FF" id="QC3-CS-LKT"/>
+                        <outlet property="saveButton" destination="xvt-VI-neH" id="vbg-mK-xD6"/>
+                        <outlet property="titleLabel" destination="CMn-ok-gtV" id="XBl-lD-0ZB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA5-dR-kxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="STU-Te-4An" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="94"/>
+            <point key="canvasLocation" x="2381.1594202898555" y="93.75"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ApT-lH-JBL">
@@ -355,7 +366,29 @@
             </objects>
             <point key="canvasLocation" x="-986" y="94"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vlc-ib-ean">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="kcL-Pf-9HP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="mg7-Ce-B0a"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mM6-Gf-03W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jjb-mF-Fcu" kind="relationship" relationship="rootViewController" id="Fjd-gV-pAz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdS-0N-lhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="670"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fjd-gV-pAz"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
