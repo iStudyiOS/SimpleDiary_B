@@ -35,31 +35,6 @@ class DiaryViewController: UIViewController {
     
     laodDummyData()
   }
-  
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    
-//    super.prepare(for: segue, sender: sender)
-//
-//    switch(segue.identifier ?? "") {
-//
-//    case "AddMemo":
-//      return
-//    case "ShowDetail":
-//      guard let DetailMemoVC = segue.destination as? DetailMemoViewController else { return }
-//
-//      guard let selectedMemoCell = sender as? MemoListTableViewCell else { return }
-//
-//      guard let indexPath = tableView.indexPath(for: selectedMemoCell) else {
-//        return
-//      }
-//
-//      let selectedMemo = memos[indexPath.row]
-//      DetailMemoVC.memo = selectedMemo
-//
-//    default:
-//      return
-//    }
-//  }
 
   @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
     if let sourceVC = sender.source as? DetailMemoViewController, let memo = sourceVC.memo {
