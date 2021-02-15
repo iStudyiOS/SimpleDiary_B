@@ -13,6 +13,7 @@ class DailyViewController: UIViewController {
     var dailyDateViewController: DailyDateViewController!
     var dailyScheduleViewController: DailyScheduleViewController!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

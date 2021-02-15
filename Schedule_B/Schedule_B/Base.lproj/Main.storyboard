@@ -230,7 +230,7 @@
                                                     <fragment content="다이어리">
                                                         <attributes>
                                                             <color key="NSColor" systemColor="labelColor"/>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="14"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -245,7 +245,7 @@
                                                     <fragment content="작성">
                                                         <attributes>
                                                             <color key="NSColor" systemColor="labelColor"/>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="14"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -428,6 +428,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1se-Kg-GLa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5cx-hs-hE3" firstAttribute="centerY" secondItem="Lhd-bD-ecF" secondAttribute="centerY" id="5aE-Of-RRQ"/>
@@ -499,6 +500,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pXU-e6-e9h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V8f-4F-VhN" firstAttribute="leading" secondItem="qWz-pg-XAv" secondAttribute="leading" id="VWp-FE-4pV"/>
@@ -608,7 +610,7 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vfu-J0-pxC">
-                                        <rect key="frame" x="324" y="2" width="80" height="50"/>
+                                        <rect key="frame" x="324" y="1.5" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="26l-uU-C56"/>
                                             <constraint firstAttribute="height" constant="50" id="6n5-4K-Thl"/>
@@ -629,6 +631,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Gk-nd-8eg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qJ8-GE-lv8" firstAttribute="leading" secondItem="tpv-Wa-Ehm" secondAttribute="leading" id="ECL-AQ-PGO"/>
