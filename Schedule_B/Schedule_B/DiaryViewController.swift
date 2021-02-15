@@ -12,7 +12,7 @@ class DiaryViewController: UIViewController {
 
   @IBOutlet weak var diaryCalendarView: FSCalendar!
   
-  override func viewDidLoad() {
+  override func viewDidLoad(){
     super.viewDidLoad()
     diaryCalendarView.backgroundColor = UIColor(red: 241/255, green: 249/255, blue: 255/255, alpha: 1)
     diaryCalendarView.appearance.selectionColor = UIColor(red: 38/255, green: 153/255, blue: 251/255, alpha: 1)
