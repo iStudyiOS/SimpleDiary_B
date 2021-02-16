@@ -17,7 +17,6 @@ class MenuViewController: UIViewController {
     super.viewDidLoad()
     self.tableView.rowHeight = CGFloat(60)
   }
-  
 }
 
 extension MenuViewController: UITableViewDelegate {
