@@ -16,6 +16,7 @@ class Memo{
   init(mainText : String, contentText: String) {
     self.mainText = mainText
     self.contentText = contentText
+
     subText = Date()
     
   }
