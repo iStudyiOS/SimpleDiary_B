@@ -9,24 +9,36 @@ import UIKit
 
 class DetailMemoViewController: UIViewController {
   
-  var memo: Memo?
+  enum ViewType {
+    case add
+    case update
+  }
+  
+  var memoType: Memo?
+  var viewType: ViewType = .add
+  var savedMemos: [Memo] = []
+  
+  // TODO: 데이터 주입해주기
 
   // TODO: 메모의 내용을 입력하지 않을 시 저장이 되지 않고 alert문을 띄우도록 할 것.
   
   @IBOutlet weak var titleLabel: UITextField!
   @IBOutlet weak var contentsTextView: UITextView!
   @IBOutlet weak var saveButton: UIBarButtonItem!
+  @IBOutlet weak var cancelButton: UIBarButtonItem!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     titleLabel.delegate = self
     
-    if let memo = memo {
+    if let memo = memoType {
       navigationItem.title = "메모 수정"
+      
       titleLabel.text = memo.mainText
       contentsTextView.text = memo.contentText
     }
     
+    navigationItem.leftBarButtonItem = cancelButton
     updateSaveButtonState()
   }
   
@@ -38,7 +50,7 @@ class DetailMemoViewController: UIViewController {
     let title = titleLabel.text ?? ""
     let contents = contentsTextView.text ?? ""
     
-    memo = Memo(mainText: title, contentText: contents)
+    memoType = Memo(mainText: title, contentText: contents)
   }
   
   // TODO: 저장 버튼을 누르면 DiaryVC로 전환되며 메모가 추가되도록.
@@ -46,7 +58,21 @@ class DetailMemoViewController: UIViewController {
   @IBAction func saveAction(_ sender: Any) {
     
   }
+  
+  // 취소 버튼 action
+  @IBAction func cancelAction(_ sender: Any) {
+    let addMode = presentingViewController is UINavigationController
+    
+    if addMode {
+      dismiss(animated: true, completion: nil)
+    } else if let ownedNVC = navigationController {
+      ownedNVC.popViewController(animated: true)
+    } else {
+      fatalError("detailMemoVC가 navigation controller 안에 없습니다.")
+    }
+  }
 }
+
 
 extension DetailMemoViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
