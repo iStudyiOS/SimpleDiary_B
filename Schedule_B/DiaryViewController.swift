@@ -13,7 +13,9 @@ class DiaryViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var diaryCalendarView: FSCalendar!
   
-  var memos = [Memo]()
+  var memoType: Memo?
+    
+  var memos: [Memo] = []
 
   let formatter : DateFormatter = {
     let f = DateFormatter()
@@ -33,11 +35,18 @@ class DiaryViewController: UIViewController {
     diaryCalendarView.scrollEnabled = true
     diaryCalendarView.scrollDirection = .vertical
     
+    
     laodDummyData()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? DetailMemoViewController {
+      vc.memoType = self.memoType
+    }
   }
 
   @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
-    if let sourceVC = sender.source as? DetailMemoViewController, let memo = sourceVC.memo {
+    if let sourceVC = sender.source as? DetailMemoViewController, let memo = sourceVC.memoType {
       let newMemo = IndexPath(row: memos.count, section: 0)
       memos.append(memo)
       tableView.insertRows(at: [newMemo], with: .automatic)
@@ -52,6 +61,9 @@ class DiaryViewController: UIViewController {
     memos += [memo1, memo2, memo3]
   }
 }
+
+//
+// MARK: Extension Delegate & DataSource
 
 extension DiaryViewController: UITableViewDelegate{
 }

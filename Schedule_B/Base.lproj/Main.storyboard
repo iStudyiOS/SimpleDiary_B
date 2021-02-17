@@ -55,7 +55,7 @@
                                         <connections>
                                             <outlet property="mainText" destination="8gn-Yn-Chg" id="2Cg-6k-YPO"/>
                                             <outlet property="subText" destination="ee7-SJ-2aU" id="5Di-0J-b84"/>
-                                            <segue destination="jjb-mF-Fcu" kind="show" identifier="showDetail" id="hsn-O8-0VY"/>
+                                            <segue destination="jjb-mF-Fcu" kind="show" identifier="showDetailSegue" id="ze0-82-K92"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,7 +77,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kcL-Pf-9HP" kind="show" identifier="addMemo" id="xhu-k4-e52"/>
+                                    <segue destination="NBX-Va-3B9" kind="show" identifier="addItemSegue" id="azi-6v-Gsf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -170,7 +170,7 @@
         <!--메모 작성-->
         <scene sceneID="u0i-dz-buC">
             <objects>
-                <viewController id="jjb-mF-Fcu" customClass="DetailMemoViewController" customModule="Schedule_B" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="jjb-mF-Fcu" customClass="DetailMemoViewController" customModule="Schedule_B" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HSK-dx-kVX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,6 +233,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="CBc-S6-Yj4">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="T1g-12-O2s">
+                            <color key="tintColor" red="1" green="0.00090441950670000005" blue="0.1484035437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="jjb-mF-Fcu" id="2Ah-9l-4uT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="저장" id="xvt-VI-neH">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -241,6 +247,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="T1g-12-O2s" id="hD3-8v-sth"/>
                         <outlet property="contentsTextView" destination="taS-7l-8FF" id="QC3-CS-LKT"/>
                         <outlet property="saveButton" destination="xvt-VI-neH" id="vbg-mK-xD6"/>
                         <outlet property="titleLabel" destination="CMn-ok-gtV" id="XBl-lD-0ZB"/>
@@ -249,7 +256,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA5-dR-kxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="STU-Te-4An" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2381.1594202898555" y="93.75"/>
+            <point key="canvasLocation" x="2364" y="94"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ApT-lH-JBL">
@@ -367,27 +374,27 @@
             <point key="canvasLocation" x="-986" y="94"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Vlc-ib-ean">
+        <scene sceneID="dqO-7V-BTb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="kcL-Pf-9HP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="NBX-Va-3B9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="mg7-Ce-B0a"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mM6-Gf-03W">
+                    <navigationItem key="navigationItem" id="BZ4-xI-e9W"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eb1-tS-UDZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jjb-mF-Fcu" kind="relationship" relationship="rootViewController" id="Fjd-gV-pAz"/>
+                        <segue destination="jjb-mF-Fcu" kind="relationship" relationship="rootViewController" id="nme-Tn-pQR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VdS-0N-lhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOb-G1-ie7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="670"/>
+            <point key="canvasLocation" x="1639" y="821"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fjd-gV-pAz"/>
+        <segue reference="nme-Tn-pQR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
