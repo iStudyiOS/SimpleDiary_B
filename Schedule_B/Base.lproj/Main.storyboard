@@ -194,6 +194,9 @@
                                                         <rect key="frame" x="46.5" y="0.0" width="335.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="jjb-mF-Fcu" id="ejC-vJ-LP2"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -210,6 +213,9 @@
                                                     </fragment>
                                                 </attributedString>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jjb-mF-Fcu" id="JIE-iD-cxr"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                     </stackView>
@@ -242,6 +248,7 @@
                         <barButtonItem key="rightBarButtonItem" title="저장" id="xvt-VI-neH">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
+                                <action selector="saveAction:" destination="jjb-mF-Fcu" id="rS9-Hv-B1Y"/>
                                 <segue destination="STU-Te-4An" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="apy-vk-gf2"/>
                             </connections>
                         </barButtonItem>

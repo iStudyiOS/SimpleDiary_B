@@ -35,14 +35,19 @@ class DiaryViewController: UIViewController {
     diaryCalendarView.scrollEnabled = true
     diaryCalendarView.scrollDirection = .vertical
     
-    
     laodDummyData()
   }
   
+  // MARK: 메모 cell 선택 시, detailVC에 데이터 연동하기
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? DetailMemoViewController {
-      vc.memoType = self.memoType
-    }
+    guard let vc = segue.destination as? DetailMemoViewController else { return }
+    
+    guard let selectedMemoCell = sender as? MemoListTableViewCell else { return }
+    
+    guard let indexPath = tableView.indexPath(for: selectedMemoCell) else { return }
+    
+    let selectedMemo = memos[indexPath.row]
+    vc.memoType = selectedMemo
   }
 
   @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
@@ -79,6 +84,7 @@ extension DiaryViewController: UITableViewDataSource{
     
     cell.mainText.text = memo.mainText
     cell.subText.text = formatter.string(from: memo.subText)
+    
     return cell
   }
 }

@@ -19,7 +19,9 @@ class DetailMemoViewController: UIViewController {
   var savedMemos: [Memo] = []
   
   // TODO: 데이터 주입해주기
-
+  
+  // TODO: 메모 수정 / 메모 추가 시, navigationBar title 바뀌도록 할 것.
+  
   // TODO: 메모의 내용을 입력하지 않을 시 저장이 되지 않고 alert문을 띄우도록 할 것.
   
   @IBOutlet weak var titleLabel: UITextField!
@@ -42,24 +44,26 @@ class DetailMemoViewController: UIViewController {
     updateSaveButtonState()
   }
   
+  // MARK: 메모 추가 시, tableView에 띄워주는 코드.
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-    
+
     guard let button = sender as? UIBarButtonItem, button == saveButton else { return }
-    
+
     let title = titleLabel.text ?? ""
     let contents = contentsTextView.text ?? ""
-    
-    memoType = Memo(mainText: title, contentText: contents)
-  }
-  
-  // TODO: 저장 버튼을 누르면 DiaryVC로 전환되며 메모가 추가되도록.
 
-  @IBAction func saveAction(_ sender: Any) {
-    
+    // TODO: Refactoring
+    memoType = Memo(mainText: title, contentText: contents)
+    let newMemo = Memo(mainText: title, contentText: contents)
+    savedMemos.append(memoType ?? newMemo)
+
   }
   
-  // 취소 버튼 action
+  @IBAction func saveAction(_ sender: Any) {
+  }
+  
+  // MARK: 취소 버튼 action
   @IBAction func cancelAction(_ sender: Any) {
     let addMode = presentingViewController is UINavigationController
     
@@ -74,6 +78,7 @@ class DetailMemoViewController: UIViewController {
 }
 
 
+// MARK: textFieldDelegate
 extension DetailMemoViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
     saveButton.isEnabled = false
