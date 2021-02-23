@@ -9,7 +9,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
   
-  var menuList: [String] = ["📘다이어리 캘린더", "📕스케쥴 캘린더"]
+  var menuList: [String] = ["📘다이어리 캘린더", "📕스케쥴 캘린더", "⚙️설정"]
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -32,6 +32,7 @@ extension MenuViewController: UITableViewDataSource {
     switch indexPath.row {
     case 0: identifier = "MenuDiaryCell"
     case 1: identifier = "MenuScheduleCell"
+    case 2: identifier = "MenuSettingCell"
     default: identifier = "MenuDiaryCell"
     }
     

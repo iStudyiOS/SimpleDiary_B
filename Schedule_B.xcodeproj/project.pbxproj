@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3A75F325E4CCC300415F32 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F225E4CCC300415F32 /* SettingViewController.swift */; };
+		1C3A75F725E4D2E300415F32 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */; };
+		1C3A75FA25E4D3A600415F32 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F925E4D3A600415F32 /* ColorExtension.swift */; };
+		1C3A75FD25E4D57700415F32 /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */; };
+		1C3A760025E4D5AE00415F32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */; };
+		1C3A760A25E4D69E00415F32 /* CellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760925E4D69E00415F32 /* CellContentsView.swift */; };
+		1C3A760D25E4D6CE00415F32 /* CalenderCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */; };
+		1C3A761025E4D6FB00415F32 /* ScheduleModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760F25E4D6FB00415F32 /* ScheduleModelController.swift */; };
+		1C3A761325E4D72400415F32 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761225E4D72400415F32 /* Schedule.swift */; };
+		1C3A761625E4D74900415F32 /* HolidayGather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761525E4D74900415F32 /* HolidayGather.swift */; };
+		1C3A761925E4D77100415F32 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761825E4D77100415F32 /* NotificationController.swift */; };
+		1C3A761C25E4D81C00415F32 /* SingleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761B25E4D81C00415F32 /* SingleCalendarVC.swift */; };
 		1C3E985425DAABFE00268DB0 /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3E985325DAABFE00268DB0 /* DetailMemoViewController.swift */; };
 		1C9948B125D1128600ACDBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9948B025D1128600ACDBB4 /* AppDelegate.swift */; };
 		1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9948B225D1128600ACDBB4 /* SceneDelegate.swift */; };
@@ -23,6 +35,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3A75F225E4CCC300415F32 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		1C3A75F925E4D3A600415F32 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
+		1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		1C3A760925E4D69E00415F32 /* CellContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentsView.swift; sourceTree = "<group>"; };
+		1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCellVC.swift; sourceTree = "<group>"; };
+		1C3A760F25E4D6FB00415F32 /* ScheduleModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModelController.swift; sourceTree = "<group>"; };
+		1C3A761225E4D72400415F32 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		1C3A761525E4D74900415F32 /* HolidayGather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayGather.swift; sourceTree = "<group>"; };
+		1C3A761825E4D77100415F32 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		1C3A761B25E4D81C00415F32 /* SingleCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCalendarVC.swift; sourceTree = "<group>"; };
 		1C3E985325DAABFE00268DB0 /* DetailMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		1C9948AD25D1128600ACDBB4 /* Schedule_B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule_B.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C9948B025D1128600ACDBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +75,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C3E984D25DAAB3E00268DB0 /* Schedule */ = {
+		1C3A75F125E4CCB200415F32 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A75F225E4CCC300415F32 /* SettingViewController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		1C3A760225E4D5C900415F32 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				1CE8AF1425D25182004A8F37 /* ScheduleViewController.swift */,
+				1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */,
+				1C3A75F925E4D3A600415F32 /* ColorExtension.swift */,
+				1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */,
+				1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		1C3A760425E4D62A00415F32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760525E4D63600415F32 /* ViewController */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1C3A760525E4D63600415F32 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760725E4D64900415F32 /* Calendar */,
+				1C3A760625E4D64000415F32 /* Daily */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		1C3A760625E4D64000415F32 /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Daily;
+			sourceTree = "<group>";
+		};
+		1C3A760725E4D64900415F32 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */,
+				1C3A761B25E4D81C00415F32 /* SingleCalendarVC.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		1C3A760825E4D65700415F32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760F25E4D6FB00415F32 /* ScheduleModelController.swift */,
+				1C3A761225E4D72400415F32 /* Schedule.swift */,
+				1C3A761525E4D74900415F32 /* HolidayGather.swift */,
+				1C3A761825E4D77100415F32 /* NotificationController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1C3E984D25DAAB3E00268DB0 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760825E4D65700415F32 /* Model */,
+				1C3A760425E4D62A00415F32 /* View */,
+				1C3A760225E4D5C900415F32 /* Helper */,
+				1C3A760925E4D69E00415F32 /* CellContentsView.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -111,6 +202,7 @@
 		1C9948AF25D1128600ACDBB4 /* Schedule_B */ = {
 			isa = PBXGroup;
 			children = (
+				1C3A75F125E4CCB200415F32 /* Setting */,
 				1C3E985025DAAB7E00268DB0 /* Etc */,
 				1C3E984F25DAAB6D00268DB0 /* Menu */,
 				1C3E984E25DAAB5000268DB0 /* Diary */,
@@ -196,15 +288,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3A761625E4D74900415F32 /* HolidayGather.swift in Sources */,
 				1C9948B525D1128600ACDBB4 /* DiaryViewController.swift in Sources */,
 				1C9948B125D1128600ACDBB4 /* AppDelegate.swift in Sources */,
 				1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */,
+				1C3A75FA25E4D3A600415F32 /* ColorExtension.swift in Sources */,
+				1C3A761025E4D6FB00415F32 /* ScheduleModelController.swift in Sources */,
+				1C3A760025E4D5AE00415F32 /* UIViewExtension.swift in Sources */,
+				1C3A75F725E4D2E300415F32 /* CalendarExtension.swift in Sources */,
+				1C3A760D25E4D6CE00415F32 /* CalenderCellVC.swift in Sources */,
 				84BDC8D625D64FD200144860 /* Memo.swift in Sources */,
+				1C3A761C25E4D81C00415F32 /* SingleCalendarVC.swift in Sources */,
+				1C3A761925E4D77100415F32 /* NotificationController.swift in Sources */,
 				84BDC8D325D64F5B00144860 /* MemoListTableViewCell.swift in Sources */,
+				1C3A75F325E4CCC300415F32 /* SettingViewController.swift in Sources */,
 				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
+				1C3A761325E4D72400415F32 /* Schedule.swift in Sources */,
 				1CE8AF1525D25182004A8F37 /* ScheduleViewController.swift in Sources */,
+				1C3A75FD25E4D57700415F32 /* ScrollViewExtension.swift in Sources */,
 				1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */,
 				1C3E985425DAABFE00268DB0 /* DetailMemoViewController.swift in Sources */,
+				1C3A760A25E4D69E00415F32 /* CellContentsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
