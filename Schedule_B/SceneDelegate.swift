@@ -16,6 +16,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let _ = (scene as? UIWindowScene) else { return }
+    let navigationController = window?.rootViewController as! UINavigationController
+    let menuVC = navigationController.visibleViewController as! MenuViewController
+    let modelController = ScheduleModelController()
+  
+    //TODO:- Move load trigger to menu view controller
+    modelController.retrieveUserData()
+    // Get Holiday data
+    modelController.checkHolidayData(for: Date().year,
+                                     about: modelController.userSetting.country)
+    //
+    menuVC.scheduleMC = modelController
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
