@@ -8,6 +8,8 @@
 import UIKit
 import FSCalendar
 
+// TODO: 메모 수정 시, 새로운 메모로 추가 저장되는 부분 구현.
+
 class DiaryViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
