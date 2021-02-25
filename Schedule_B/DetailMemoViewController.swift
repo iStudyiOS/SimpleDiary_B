@@ -8,21 +8,11 @@
 import UIKit
 
 class DetailMemoViewController: UIViewController {
-  
-  enum ViewType {
-    case add
-    case update
-  }
-  
+
   var memoType: Memo?
-  var viewType: ViewType = .add
-  var savedMemos: [Memo] = []
   
-  // TODO: 데이터 주입해주기
-  
-  // TODO: 메모 수정 / 메모 추가 시, navigationBar title 바뀌도록 할 것.
-  
-  // TODO: 메모의 내용을 입력하지 않을 시 저장이 되지 않고 alert문을 띄우도록 할 것.
+  // TODO: 메모 수정 후 저장 버튼 누를 때, dismiss 안 되는 것.
+  // TODO: 수정 후 저장을 누르면, 메모가 수정되는 것이 아니라 새로운 메모가 추가된다. update 함수 구현하기.
   
   @IBOutlet weak var titleLabel: UITextField!
   @IBOutlet weak var contentsTextView: UITextView!
@@ -39,34 +29,34 @@ class DetailMemoViewController: UIViewController {
       titleLabel.text = memo.mainText
       contentsTextView.text = memo.contentText
     }
-    
-    navigationItem.leftBarButtonItem = cancelButton
-    updateSaveButtonState()
-  }
+}
   
-  // MARK: 메모 추가 시, tableView에 띄워주는 코드.
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
+  func update(memo: Memo) {
+    titleLabel.text = memo.mainText
+    contentsTextView.text = memo.contentText
 
-    guard let button = sender as? UIBarButtonItem, button == saveButton else { return }
+  }
 
-    let title = titleLabel.text ?? ""
+  // MARK: 저장 버튼 action
+  @IBAction func onSave(sender: UIBarButtonItem) {
+    
+    let title = titleLabel.text
     let contents = contentsTextView.text ?? ""
 
-    // TODO: Refactoring
-    memoType = Memo(mainText: title, contentText: contents)
-    let newMemo = Memo(mainText: title, contentText: contents)
-    savedMemos.append(memoType ?? newMemo)
-
-  }
-  
-  @IBAction func saveAction(_ sender: Any) {
+    if title == "" {
+      showAlert("제목을 입력해주세요")
+      return
+    } else {
+      let newMemo = Memo(mainText: title!, contentText: contents)
+      Memo.dummyMemoList.append(newMemo)
+      dismiss(animated: true, completion: nil)
+    }
   }
   
   // MARK: 취소 버튼 action
   @IBAction func cancelAction(_ sender: Any) {
     let addMode = presentingViewController is UINavigationController
-    
+
     if addMode {
       dismiss(animated: true, completion: nil)
     } else if let ownedNVC = navigationController {
@@ -75,13 +65,24 @@ class DetailMemoViewController: UIViewController {
       fatalError("detailMemoVC가 navigation controller 안에 없습니다.")
     }
   }
+  
+  // MARK: Configuring Alert
+  func showAlert(_ message: String) {
+    let alert = UIAlertController(
+      title: .none,
+      message: message,
+      preferredStyle: .alert)
+    let offAction = UIAlertAction(title: "확인", style: .default)
+    
+    alert.addAction(offAction)
+    self.present(alert, animated: true)
+  }
 }
-
 
 // MARK: textFieldDelegate
 extension DetailMemoViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
-    saveButton.isEnabled = false
+    saveButton.isEnabled = true
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -91,12 +92,6 @@ extension DetailMemoViewController: UITextFieldDelegate {
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {
-      updateSaveButtonState()
       navigationItem.title = textField.text
-  }
-  
-  private func updateSaveButtonState() {
-      let text = titleLabel.text ?? ""
-      saveButton.isEnabled = !text.isEmpty
   }
 }

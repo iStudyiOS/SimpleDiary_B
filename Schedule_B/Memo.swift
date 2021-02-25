@@ -18,6 +18,11 @@ class Memo{
     self.contentText = contentText
 
     subText = Date()
-    
   }
+  
+  static var dummyMemoList: [Memo] = [
+    Memo(mainText: "dummy메모1", contentText: "dummy메모1 detail"),
+    Memo(mainText: "dummy메모2", contentText: "dummy메모2 detail"),
+    Memo(mainText: "dummy메모3", contentText: "dummy메모3 detail")
+  ]
 }

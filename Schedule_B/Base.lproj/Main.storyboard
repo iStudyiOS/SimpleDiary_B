@@ -189,23 +189,21 @@
                                 <action selector="cancelAction:" destination="jjb-mF-Fcu" id="2Ah-9l-4uT"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="저장" id="xvt-VI-neH">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="rU8-S5-gFS">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <action selector="saveAction:" destination="jjb-mF-Fcu" id="rS9-Hv-B1Y"/>
-                                <segue destination="STU-Te-4An" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="apy-vk-gf2"/>
+                                <action selector="onSaveWithSender:" destination="jjb-mF-Fcu" id="rxZ-vZ-M42"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="T1g-12-O2s" id="hD3-8v-sth"/>
                         <outlet property="contentsTextView" destination="taS-7l-8FF" id="QC3-CS-LKT"/>
-                        <outlet property="saveButton" destination="xvt-VI-neH" id="vbg-mK-xD6"/>
+                        <outlet property="saveButton" destination="rU8-S5-gFS" id="jxD-TB-cW1"/>
                         <outlet property="titleLabel" destination="CMn-ok-gtV" id="XBl-lD-0ZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA5-dR-kxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="STU-Te-4An" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2528" y="-569"/>
         </scene>
@@ -371,7 +369,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOb-G1-ie7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="-309"/>
+            <point key="canvasLocation" x="1633" y="242"/>
         </scene>
         <!--설정-->
         <scene sceneID="L2C-Ey-7iX">
@@ -464,7 +462,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0E-Xy-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="1110"/>
+            <point key="canvasLocation" x="-159" y="1051"/>
         </scene>
         <!--구글 캘린더 연결하기-->
         <scene sceneID="KJv-L9-6td">
@@ -628,7 +626,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRI-I0-fG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="1110"/>
+            <point key="canvasLocation" x="696" y="1051"/>
         </scene>
         <!--ScheduleVC-->
         <scene sceneID="ADH-qc-9UN">
@@ -858,7 +856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3d-W6-wew" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="387"/>
+            <point key="canvasLocation" x="696" y="242"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
