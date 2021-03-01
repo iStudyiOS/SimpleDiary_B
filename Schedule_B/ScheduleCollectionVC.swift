@@ -1,9 +1,4 @@
-//
-//  ScheduleViewController.swift
-//  Schedule_B
-//
-//  Created by KEEN on 2021/02/09.
-//
+
 
 import UIKit
 
@@ -15,27 +10,40 @@ protocol ScheduleCollectionVC: UIViewController & UICollectionViewDelegate & UIC
     
 }
 extension ScheduleCollectionVC {
-    func modifyCalendarCell(_ cell: CalendarCellVC, at indexPath: IndexPath, calendarView: UICollectionView) -> CalendarCellVC {
+    func drawCellForCalendar(_ cell: CalendarCell, at indexPath: IndexPath, calendarView: UICollectionView) -> CalendarCell {
         
         let dateInt = squaresInCalendarView[indexPath.item]
         if dateInt != nil {
             // toss data to cell
-            cell.cellView.date = dateInt
-            cell.cellView.isToday = dateInt! == Date().toInt
-            cell.cellView.holiday = modelController.holidayTable[dateInt!]
-            cell.cellView.schedules = modelController.getSchedules(for: dateInt!)
-            // Add cell content with Swift UI
-            cell.hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-            cell.hostingController.view.frame = cell.contentView.frame
-            cell.contentView.addSubview(cell.hostingController.view)
+            cell.calendarCellView.date = dateInt!.toDate
+            cell.calendarCellView.holiday = modelController.holidayTable[dateInt!]
+            cell.calendarCellView.schedules = modelController.getSchedules(for: dateInt!)
+            // adjust swift ui view
+            cell.calendarCellHC.view.translatesAutoresizingMaskIntoConstraints = false
+            cell.calendarCellHC.view.frame = cell.contentView.frame
+            cell.contentView.addSubview(cell.calendarCellHC.view)
         }else {
-            cell.hostingController.rootView.date = nil
-            cell.hostingController.view.removeFromSuperview()
+            cell.calendarCellHC.rootView.date = nil
+            cell.calendarCellHC.view.removeFromSuperview()
         }
         return cell
     }
-    func isEmptyCell(_ cell: CalendarCellVC) -> Bool {
-        return cell.cellView.date == nil
+    func drawCellForWeeklyView(_ cell: WeeklyCell, at indexPath: IndexPath, calendarView: UICollectionView) -> WeeklyCell  {
+        let dateInt = squaresInCalendarView[indexPath.item]!
+        // toss date to cell
+        cell.weeklyCellView.date = dateInt.toDate!
+        cell.weeklyCellView.schedules = modelController.getSchedules(for: dateInt)
+        cell.weeklyCellView.holiday = modelController.holidayTable[dateInt]
+        // adjust swift ui view
+        cell.weeklyCellHC.view.translatesAutoresizingMaskIntoConstraints = false
+        cell.weeklyCellHC.view.frame = cell.contentView.frame
+        cell.contentView.addSubview(cell.weeklyCellHC.view)
+        cell.layer.borderColor = .init(gray: 0.5, alpha: 0.5)
+        cell.layer.borderWidth = 0.8
+        return cell
+    }
+    func isEmptyCell(_ cell: CalendarCell) -> Bool {
+        return cell.calendarCellView.date == nil
     }
 }
 

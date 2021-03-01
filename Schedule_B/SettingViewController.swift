@@ -22,6 +22,14 @@ class SettingViewController: UITableViewController {
         performSegue(withIdentifier: "ConnectGoogleCalendarSegue", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConnectGoogleCalendarSegue",
+           let connectGoogleCalendarVC = segue.destination as? ConnectGoogleCalendarVC{
+            connectGoogleCalendarVC.scheduleModelController = scheduleModelController
+        }
+    }
+        
+    
     @objc private func tapDeleteScheduleDataCell() {
         let alertController = UIAlertController(
             title: "스케쥴 삭제",

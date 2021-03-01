@@ -33,14 +33,18 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate, UI
     
     // MARK:- User intents
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowDailyView",
-//           let dailyVC = segue.destination as? DailyViewController,
-//           let dateToShow = sender as? Int{
-//            dailyVC.dateIntShowing = dateToShow
-//            dailyVC.modelController = modelController
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDailyViewSegue",
+           let dailyVC = segue.destination as? DailyViewController,
+           let dateToShow = sender as? Int{
+            dailyVC.dateIntShowing = dateToShow
+            dailyVC.modelController = modelController
+        }else if segue.identifier == "NewScheduleSegue",
+                 let editScheduleVC = segue.destination as? EditScheduleVC {
+            editScheduleVC.modelController = modelController
+            editScheduleVC.recievedDate = selectedDate
+        }
+    }
     @IBAction func tapSearchButton(_ sender: Any) {
         if  navigationItem.searchController == nil {
             navigationItem.searchController = searchController
@@ -71,7 +75,7 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate, UI
     }
     
     private var datePicker = UIDatePicker()
-    private(set) var selectedDate = Date()
+    var selectedDate = Date()
     @IBAction func showDatePicker(_ sender: UIButton) {
         if datePickerModal.isHidden {
             self.datePickerModal.isHidden = false
@@ -128,10 +132,11 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         scrollCalendarView.scrollToChild(currentCalendarView)
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xcc561e)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        deliverDate(Date())
+        deliverDate(selectedDate)
     }
     // MARK: Date picker
     
@@ -144,12 +149,14 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate, UI
         datePickerModal.addSubview(datePicker)
         datePicker.addTarget(self, action: #selector(selectDateInDatePicker(_:)), for: .valueChanged)
     }
-    // MARK: Navigation controller
+    // MARK: Navigation bar
     
     private func initNavgationBar() {
         let newBackButton = UIBarButtonItem(title: "Back",
                                             style: .plain,
                                             target: self, action: #selector(tapBackButton))
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.lightGray]
         navigationItem.leftBarButtonItem = newBackButton
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
@@ -161,6 +168,9 @@ class ScheduleCalendarViewController: UIViewController, UIScrollViewDelegate, UI
         searchController.searchBar.delegate = self
     }
     @objc private func tapBackButton() {
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.barTintColor = nil
+        navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.popViewController(animated: true)
     }
     // MARK:- Search controller delegate

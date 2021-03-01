@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C3A75F725E4D2E300415F32 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */; };
+		1C3A75F725E4D2E300415F32 /* Calendar&DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F625E4D2E300415F32 /* Calendar&DateExtension.swift */; };
 		1C3A75FA25E4D3A600415F32 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75F925E4D3A600415F32 /* ColorExtension.swift */; };
 		1C3A75FD25E4D57700415F32 /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */; };
 		1C3A760025E4D5AE00415F32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */; };
-		1C3A760A25E4D69E00415F32 /* CellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760925E4D69E00415F32 /* CellContentsView.swift */; };
-		1C3A760D25E4D6CE00415F32 /* CalenderCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */; };
+		1C3A760A25E4D69E00415F32 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760925E4D69E00415F32 /* CalendarCellView.swift */; };
+		1C3A760D25E4D6CE00415F32 /* CalenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760C25E4D6CE00415F32 /* CalenderCell.swift */; };
 		1C3A761025E4D6FB00415F32 /* ScheduleModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A760F25E4D6FB00415F32 /* ScheduleModelController.swift */; };
 		1C3A761325E4D72400415F32 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761225E4D72400415F32 /* Schedule.swift */; };
 		1C3A761625E4D74900415F32 /* HolidayGather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A761525E4D74900415F32 /* HolidayGather.swift */; };
@@ -31,6 +31,12 @@
 		1CE8AF1525D25182004A8F37 /* ScheduleCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8AF1425D25182004A8F37 /* ScheduleCollectionVC.swift */; };
 		84BDC8D325D64F5B00144860 /* MemoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC8D225D64F5B00144860 /* MemoListTableViewCell.swift */; };
 		84BDC8D625D64FD200144860 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC8D525D64FD200144860 /* Memo.swift */; };
+		CC0B3DA625EB733A00896FED /* CurrentTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B3DA525EB733A00896FED /* CurrentTimeLine.swift */; };
+		CC12A36725E95E630054B878 /* DailyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC12A36625E95E630054B878 /* DailyScrollView.swift */; };
+		CC1CCB5D25EB684C008E7D7D /* ScheduleBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1CCB5C25EB684C008E7D7D /* ScheduleBackground.swift */; };
+		CC36805725E8D76400F72F92 /* WeeklyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36805625E8D76400F72F92 /* WeeklyCellView.swift */; };
+		CC36805A25E8D7FD00F72F92 /* WeeklyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36805925E8D7FD00F72F92 /* WeeklyCell.swift */; };
+		CC8C806F25EB815000AD5177 /* EditScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8C806E25EB815000AD5177 /* EditScheduleVC.swift */; };
 		CC99BC3125E4DBD200F2CCC7 /* ScheduleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC3025E4DBD200F2CCC7 /* ScheduleCalendarVC.swift */; };
 		CC99BC4425E4DC1600F2CCC7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC3425E4DC1500F2CCC7 /* SettingViewController.swift */; };
 		CC99BC4525E4DC1600F2CCC7 /* ConnectGoogleCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC3625E4DC1500F2CCC7 /* ConnectGoogleCalendarVC.swift */; };
@@ -50,15 +56,30 @@
 		CC99BC5925E4DCF200F2CCC7 /* Future&Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC5525E4DCF200F2CCC7 /* Future&Promise.swift */; };
 		CC99BC5A25E4DCF200F2CCC7 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC5625E4DCF200F2CCC7 /* URLRequestExtension.swift */; };
 		CC99BC5B25E4DCF200F2CCC7 /* Loopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99BC5725E4DCF200F2CCC7 /* Loopable.swift */; };
+		CC9F686525EAAB13002EC017 /* AlldaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9F686425EAAB13002EC017 /* AlldaySchedule.swift */; };
+		CC9F686825EADA5F002EC017 /* OverlappedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9F686725EADA5F002EC017 /* OverlappedCell.swift */; };
+		CC9F686B25EADC03002EC017 /* DailyScrollViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9F686A25EADC03002EC017 /* DailyScrollViewHelper.swift */; };
+		CCA7E00B25EA55C8004B3014 /* ScheduleContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7E00A25EA55C8004B3014 /* ScheduleContentsView.swift */; };
+		CCBDC9E925E90695003D0C75 /* ScheduleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBDC9E825E90695003D0C75 /* ScheduleExtension.swift */; };
+		CCBDC9EC25E918F5003D0C75 /* DailyScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBDC9EB25E918F5003D0C75 /* DailyScrollVC.swift */; };
+		CCC0E3C925E583D400146770 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0E3C825E583D400146770 /* EventListCell.swift */; };
+		CCC0E3CC25E5867600146770 /* EventListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0E3CB25E5867600146770 /* EventListTableVC.swift */; };
+		CCC0E3CF25E62D9000146770 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0E3CE25E62D9000146770 /* DispatchQueueExtension.swift */; };
+		CCD1B38225EBD2FD003DDA88 /* MultiSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1B38125EBD2FD003DDA88 /* MultiSegmentView.swift */; };
+		CCD1B38825EBEAB2003DDA88 /* DateSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1B38725EBEAB2003DDA88 /* DateSelectVC.swift */; };
+		CCEFB64025E67D35008B14AC /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEFB63F25E67D35008B14AC /* DailyViewController.swift */; };
+		CCEFB64425E68193008B14AC /* WeeklyScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEFB64325E68193008B14AC /* WeeklyScheduleVC.swift */; };
+		CCF4997425ECC80A0020157A /* NewLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4997325ECC80A0020157A /* NewLineTextView.swift */; };
+		CCFED69825EA0423004A2311 /* BaseLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFED69725EA0423004A2311 /* BaseLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		1C3A75F625E4D2E300415F32 /* Calendar&DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar&DateExtension.swift"; sourceTree = "<group>"; };
 		1C3A75F925E4D3A600415F32 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		1C3A760925E4D69E00415F32 /* CellContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentsView.swift; sourceTree = "<group>"; };
-		1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCellVC.swift; sourceTree = "<group>"; };
+		1C3A760925E4D69E00415F32 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
+		1C3A760C25E4D6CE00415F32 /* CalenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCell.swift; sourceTree = "<group>"; };
 		1C3A760F25E4D6FB00415F32 /* ScheduleModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModelController.swift; sourceTree = "<group>"; };
 		1C3A761225E4D72400415F32 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		1C3A761525E4D74900415F32 /* HolidayGather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayGather.swift; sourceTree = "<group>"; };
@@ -78,6 +99,12 @@
 		1CE8AF1425D25182004A8F37 /* ScheduleCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionVC.swift; sourceTree = "<group>"; };
 		84BDC8D225D64F5B00144860 /* MemoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewCell.swift; sourceTree = "<group>"; };
 		84BDC8D525D64FD200144860 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		CC0B3DA525EB733A00896FED /* CurrentTimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeLine.swift; sourceTree = "<group>"; };
+		CC12A36625E95E630054B878 /* DailyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrollView.swift; sourceTree = "<group>"; };
+		CC1CCB5C25EB684C008E7D7D /* ScheduleBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBackground.swift; sourceTree = "<group>"; };
+		CC36805625E8D76400F72F92 /* WeeklyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCellView.swift; sourceTree = "<group>"; };
+		CC36805925E8D7FD00F72F92 /* WeeklyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCell.swift; sourceTree = "<group>"; };
+		CC8C806E25EB815000AD5177 /* EditScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduleVC.swift; sourceTree = "<group>"; };
 		CC99BC3025E4DBD200F2CCC7 /* ScheduleCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCalendarVC.swift; sourceTree = "<group>"; };
 		CC99BC3425E4DC1500F2CCC7 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CC99BC3625E4DC1500F2CCC7 /* ConnectGoogleCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectGoogleCalendarVC.swift; sourceTree = "<group>"; };
@@ -97,6 +124,21 @@
 		CC99BC5525E4DCF200F2CCC7 /* Future&Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Future&Promise.swift"; sourceTree = "<group>"; };
 		CC99BC5625E4DCF200F2CCC7 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
 		CC99BC5725E4DCF200F2CCC7 /* Loopable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loopable.swift; sourceTree = "<group>"; };
+		CC9F686425EAAB13002EC017 /* AlldaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlldaySchedule.swift; sourceTree = "<group>"; };
+		CC9F686725EADA5F002EC017 /* OverlappedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedCell.swift; sourceTree = "<group>"; };
+		CC9F686A25EADC03002EC017 /* DailyScrollViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrollViewHelper.swift; sourceTree = "<group>"; };
+		CCA7E00A25EA55C8004B3014 /* ScheduleContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleContentsView.swift; sourceTree = "<group>"; };
+		CCBDC9E825E90695003D0C75 /* ScheduleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleExtension.swift; sourceTree = "<group>"; };
+		CCBDC9EB25E918F5003D0C75 /* DailyScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrollVC.swift; sourceTree = "<group>"; };
+		CCC0E3C825E583D400146770 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		CCC0E3CB25E5867600146770 /* EventListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableVC.swift; sourceTree = "<group>"; };
+		CCC0E3CE25E62D9000146770 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
+		CCD1B38125EBD2FD003DDA88 /* MultiSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSegmentView.swift; sourceTree = "<group>"; };
+		CCD1B38725EBEAB2003DDA88 /* DateSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectVC.swift; sourceTree = "<group>"; };
+		CCEFB63F25E67D35008B14AC /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		CCEFB64325E68193008B14AC /* WeeklyScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyScheduleVC.swift; sourceTree = "<group>"; };
+		CCF4997325ECC80A0020157A /* NewLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLineTextView.swift; sourceTree = "<group>"; };
+		CCFED69725EA0423004A2311 /* BaseLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +165,13 @@
 		1C3A760225E4D5C900415F32 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				1CE8AF1425D25182004A8F37 /* ScheduleCollectionVC.swift */,
-				1C3A75F625E4D2E300415F32 /* CalendarExtension.swift */,
+				CCD1B37725EBD0FB003DDA88 /* UI */,
+				1C3A75F625E4D2E300415F32 /* Calendar&DateExtension.swift */,
+				CCC0E3CE25E62D9000146770 /* DispatchQueueExtension.swift */,
+				CCBDC9E825E90695003D0C75 /* ScheduleExtension.swift */,
 				CC99BC5525E4DCF200F2CCC7 /* Future&Promise.swift */,
 				CC99BC5725E4DCF200F2CCC7 /* Loopable.swift */,
 				CC99BC5625E4DCF200F2CCC7 /* URLRequestExtension.swift */,
-				CC99BC5425E4DCF200F2CCC7 /* ViewControllerExtension.swift */,
-				1C3A75F925E4D3A600415F32 /* ColorExtension.swift */,
-				1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */,
-				1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -139,7 +179,11 @@
 		1C3A760425E4D62A00415F32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1C3A760525E4D63600415F32 /* ViewController */,
+				1C3A760925E4D69E00415F32 /* CalendarCellView.swift */,
+				CC36805625E8D76400F72F92 /* WeeklyCellView.swift */,
+				CCD1B38125EBD2FD003DDA88 /* MultiSegmentView.swift */,
+				CC12A36625E95E630054B878 /* DailyScrollView.swift */,
+				CC0B3DAA25EB752800896FED /* DailyScrollViewParts */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -147,27 +191,12 @@
 		1C3A760525E4D63600415F32 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1C3A760725E4D64900415F32 /* Calendar */,
-				1C3A760625E4D64000415F32 /* Daily */,
+				CC7B75D625EBEE3500FBE7B7 /* Edit */,
+				CC8C806A25EB762900AD5177 /* Calendar */,
+				CC8C806B25EB763B00AD5177 /* Weekly */,
+				CC8C806C25EB764600AD5177 /* Daily */,
 			);
 			name = ViewController;
-			sourceTree = "<group>";
-		};
-		1C3A760625E4D64000415F32 /* Daily */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Daily;
-			sourceTree = "<group>";
-		};
-		1C3A760725E4D64900415F32 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				1C3A760C25E4D6CE00415F32 /* CalenderCellVC.swift */,
-				CC99BC3025E4DBD200F2CCC7 /* ScheduleCalendarVC.swift */,
-				1C3A761B25E4D81C00415F32 /* SingleCalendarVC.swift */,
-			);
-			name = Calendar;
 			sourceTree = "<group>";
 		};
 		1C3A760825E4D65700415F32 /* Model */ = {
@@ -184,10 +213,10 @@
 		1C3E984D25DAAB3E00268DB0 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				1C3A760525E4D63600415F32 /* ViewController */,
 				1C3A760825E4D65700415F32 /* Model */,
 				1C3A760425E4D62A00415F32 /* View */,
 				1C3A760225E4D5C900415F32 /* Helper */,
-				1C3A760925E4D69E00415F32 /* CellContentsView.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -254,14 +283,82 @@
 			path = Schedule_B;
 			sourceTree = "<group>";
 		};
-		CC99BC3525E4DC1500F2CCC7 /* GoogleCalendar */ = {
+		CC0B3DAA25EB752800896FED /* DailyScrollViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				CC0B3DA525EB733A00896FED /* CurrentTimeLine.swift */,
+				CC9F686725EADA5F002EC017 /* OverlappedCell.swift */,
+				CC1CCB5C25EB684C008E7D7D /* ScheduleBackground.swift */,
+				CC9F686425EAAB13002EC017 /* AlldaySchedule.swift */,
+				CCA7E00A25EA55C8004B3014 /* ScheduleContentsView.swift */,
+				CCFED69725EA0423004A2311 /* BaseLine.swift */,
+			);
+			name = DailyScrollViewParts;
+			sourceTree = "<group>";
+		};
+		CC4CFFB525E7268000F63C61 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CC99BC3625E4DC1500F2CCC7 /* ConnectGoogleCalendarVC.swift */,
-				CC99BC3725E4DC1500F2CCC7 /* GoogleOAuthConfig.swift */,
-				CC99BC3825E4DC1600F2CCC7 /* ICalendarLibrary */,
-				CC99BC4225E4DC1600F2CCC7 /* OAuthGather.swift */,
+				CCC0E3CB25E5867600146770 /* EventListTableVC.swift */,
+				CCC0E3C825E583D400146770 /* EventListCell.swift */,
 				CC99BC4325E4DC1600F2CCC7 /* WebViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC4CFFB725E7269700F63C61 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				CC99BC3725E4DC1500F2CCC7 /* GoogleOAuthConfig.swift */,
+				CC99BC4225E4DC1600F2CCC7 /* OAuthGather.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		CC7B75D625EBEE3500FBE7B7 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CCD1B38725EBEAB2003DDA88 /* DateSelectVC.swift */,
+				CC8C806E25EB815000AD5177 /* EditScheduleVC.swift */,
+			);
+			name = Edit;
+			sourceTree = "<group>";
+		};
+		CC8C806A25EB762900AD5177 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A760C25E4D6CE00415F32 /* CalenderCell.swift */,
+				CC99BC3025E4DBD200F2CCC7 /* ScheduleCalendarVC.swift */,
+				1C3A761B25E4D81C00415F32 /* SingleCalendarVC.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		CC8C806B25EB763B00AD5177 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				CC36805925E8D7FD00F72F92 /* WeeklyCell.swift */,
+				CCEFB64325E68193008B14AC /* WeeklyScheduleVC.swift */,
+			);
+			name = Weekly;
+			sourceTree = "<group>";
+		};
+		CC8C806C25EB764600AD5177 /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				CCEFB63F25E67D35008B14AC /* DailyViewController.swift */,
+				CCBDC9EB25E918F5003D0C75 /* DailyScrollVC.swift */,
+			);
+			name = Daily;
+			sourceTree = "<group>";
+		};
+		CC99BC3525E4DC1500F2CCC7 /* GoogleCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				CC4CFFB525E7268000F63C61 /* View */,
+				CC4CFFB725E7269700F63C61 /* OAuth */,
+				CC99BC3825E4DC1600F2CCC7 /* ICalendarLibrary */,
 			);
 			path = GoogleCalendar;
 			sourceTree = "<group>";
@@ -280,6 +377,20 @@
 				CC99BC4125E4DC1600F2CCC7 /* StringExtension.swift */,
 			);
 			path = ICalendarLibrary;
+			sourceTree = "<group>";
+		};
+		CCD1B37725EBD0FB003DDA88 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1CE8AF1425D25182004A8F37 /* ScheduleCollectionVC.swift */,
+				CC9F686A25EADC03002EC017 /* DailyScrollViewHelper.swift */,
+				CCF4997325ECC80A0020157A /* NewLineTextView.swift */,
+				CC99BC5425E4DCF200F2CCC7 /* ViewControllerExtension.swift */,
+				1C3A75F925E4D3A600415F32 /* ColorExtension.swift */,
+				1C3A75FC25E4D57700415F32 /* ScrollViewExtension.swift */,
+				1C3A75FF25E4D5AE00415F32 /* UIViewExtension.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,42 +470,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3A761625E4D74900415F32 /* HolidayGather.swift in Sources */,
+				CCBDC9EC25E918F5003D0C75 /* DailyScrollVC.swift in Sources */,
 				CC99BC4425E4DC1600F2CCC7 /* SettingViewController.swift in Sources */,
+				CC36805A25E8D7FD00F72F92 /* WeeklyCell.swift in Sources */,
+				CCA7E00B25EA55C8004B3014 /* ScheduleContentsView.swift in Sources */,
 				CC99BC4B25E4DC1600F2CCC7 /* ICalendarError.swift in Sources */,
 				1C9948B525D1128600ACDBB4 /* DiaryViewController.swift in Sources */,
 				1C9948B125D1128600ACDBB4 /* AppDelegate.swift in Sources */,
+				CCC0E3CF25E62D9000146770 /* DispatchQueueExtension.swift in Sources */,
 				CC99BC4725E4DC1600F2CCC7 /* CalendarComponent.swift in Sources */,
 				CC99BC4825E4DC1600F2CCC7 /* DateExtension.swift in Sources */,
 				1C9948B325D1128600ACDBB4 /* SceneDelegate.swift in Sources */,
 				CC99BC5925E4DCF200F2CCC7 /* Future&Promise.swift in Sources */,
 				1C3A75FA25E4D3A600415F32 /* ColorExtension.swift in Sources */,
+				CCFED69825EA0423004A2311 /* BaseLine.swift in Sources */,
 				CC99BC4625E4DC1600F2CCC7 /* GoogleOAuthConfig.swift in Sources */,
+				CC9F686525EAAB13002EC017 /* AlldaySchedule.swift in Sources */,
+				CC12A36725E95E630054B878 /* DailyScrollView.swift in Sources */,
 				1C3A761025E4D6FB00415F32 /* ScheduleModelController.swift in Sources */,
 				1C3A760025E4D5AE00415F32 /* UIViewExtension.swift in Sources */,
-				1C3A75F725E4D2E300415F32 /* CalendarExtension.swift in Sources */,
-				1C3A760D25E4D6CE00415F32 /* CalenderCellVC.swift in Sources */,
+				CCEFB64025E67D35008B14AC /* DailyViewController.swift in Sources */,
+				1C3A75F725E4D2E300415F32 /* Calendar&DateExtension.swift in Sources */,
+				CCD1B38225EBD2FD003DDA88 /* MultiSegmentView.swift in Sources */,
+				1C3A760D25E4D6CE00415F32 /* CalenderCell.swift in Sources */,
 				84BDC8D625D64FD200144860 /* Memo.swift in Sources */,
 				1C3A761C25E4D81C00415F32 /* SingleCalendarVC.swift in Sources */,
 				1C3A761925E4D77100415F32 /* NotificationController.swift in Sources */,
+				CCD1B38825EBEAB2003DDA88 /* DateSelectVC.swift in Sources */,
 				84BDC8D325D64F5B00144860 /* MemoListTableViewCell.swift in Sources */,
 				CC99BC5125E4DC1600F2CCC7 /* WebViewController.swift in Sources */,
+				CCF4997425ECC80A0020157A /* NewLineTextView.swift in Sources */,
+				CCC0E3CC25E5867600146770 /* EventListTableVC.swift in Sources */,
 				CC99BC3125E4DBD200F2CCC7 /* ScheduleCalendarVC.swift in Sources */,
+				CCEFB64425E68193008B14AC /* WeeklyScheduleVC.swift in Sources */,
 				CC99BC5825E4DCF200F2CCC7 /* ViewControllerExtension.swift in Sources */,
+				CCBDC9E925E90695003D0C75 /* ScheduleExtension.swift in Sources */,
 				1CA2BC8425D249FB0044EA31 /* MenuViewController.swift in Sources */,
+				CC9F686B25EADC03002EC017 /* DailyScrollViewHelper.swift in Sources */,
 				CC99BC5A25E4DCF200F2CCC7 /* URLRequestExtension.swift in Sources */,
+				CC1CCB5D25EB684C008E7D7D /* ScheduleBackground.swift in Sources */,
 				CC99BC5B25E4DCF200F2CCC7 /* Loopable.swift in Sources */,
+				CC9F686825EADA5F002EC017 /* OverlappedCell.swift in Sources */,
 				CC99BC4F25E4DC1600F2CCC7 /* StringExtension.swift in Sources */,
 				CC99BC4E25E4DC1600F2CCC7 /* IcsElement.swift in Sources */,
 				CC99BC4A25E4DC1600F2CCC7 /* ICalendarAlarm.swift in Sources */,
+				CC8C806F25EB815000AD5177 /* EditScheduleVC.swift in Sources */,
+				CCC0E3C925E583D400146770 /* EventListCell.swift in Sources */,
 				1C3A761325E4D72400415F32 /* Schedule.swift in Sources */,
 				CC99BC4525E4DC1600F2CCC7 /* ConnectGoogleCalendarVC.swift in Sources */,
 				1CE8AF1525D25182004A8F37 /* ScheduleCollectionVC.swift in Sources */,
 				CC99BC4D25E4DC1600F2CCC7 /* ICalendarParser.swift in Sources */,
+				CC0B3DA625EB733A00896FED /* CurrentTimeLine.swift in Sources */,
 				1C3A75FD25E4D57700415F32 /* ScrollViewExtension.swift in Sources */,
+				CC36805725E8D76400F72F92 /* WeeklyCellView.swift in Sources */,
 				1CA2BC8825D24A6E0044EA31 /* MenuTableViewCell.swift in Sources */,
 				CC99BC4C25E4DC1600F2CCC7 /* ICalendarEvent.swift in Sources */,
 				1C3E985425DAABFE00268DB0 /* DetailMemoViewController.swift in Sources */,
-				1C3A760A25E4D69E00415F32 /* CellContentsView.swift in Sources */,
+				1C3A760A25E4D69E00415F32 /* CalendarCellView.swift in Sources */,
 				CC99BC5025E4DC1600F2CCC7 /* OAuthGather.swift in Sources */,
 				CC99BC4925E4DC1600F2CCC7 /* ICalendar.swift in Sources */,
 			);
@@ -544,13 +676,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 96XCF965VW;
 				INFOPLIST_FILE = Schedule_B/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "heyziin.Schedule-B";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iStudyiOS.github;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -563,13 +695,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 96XCF965VW;
 				INFOPLIST_FILE = Schedule_B/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "heyziin.Schedule-B";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iStudyiOS.github;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -12,9 +12,7 @@ extension URLRequest {
         let promise = givenPromise == nil ? Promise<Data>(): givenPromise!
         
         let task = URLSession.shared.dataTask(with: self) {
-            data, response, error in
-            print("Reponse of data task")
-            print(response!)
+            data, _, error in
             if let error = error {
                 promise.reject(with: error)
             }else {
