@@ -19,6 +19,13 @@ class DetailMemoViewController: UIViewController {
   @IBOutlet weak var saveButton: UIBarButtonItem!
   @IBOutlet weak var cancelButton: UIBarButtonItem!
   
+  // MARK: 변경된 메모 타입을 dirayVC에 전달.
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination.children.first as? DiaryViewController {
+      vc.editMemoType = memoType
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     titleLabel.delegate = self
@@ -34,12 +41,10 @@ class DetailMemoViewController: UIViewController {
   func update(memo: Memo) {
     titleLabel.text = memo.mainText
     contentsTextView.text = memo.contentText
-
   }
 
   // MARK: 저장 버튼 action
   @IBAction func onSave(sender: UIBarButtonItem) {
-    
     let title = titleLabel.text
     let contents = contentsTextView.text ?? ""
 
@@ -47,8 +52,15 @@ class DetailMemoViewController: UIViewController {
       showAlert("제목을 입력해주세요")
       return
     } else {
+      // 새로운 메모를 추가할 때
       let newMemo = Memo(mainText: title!, contentText: contents)
       Memo.dummyMemoList.append(newMemo)
+      dismiss(animated: true, completion: nil)
+    }
+    
+    // 메모 수정 상태일 때
+    if let memo = memoType {
+      update(memo: memo)
       dismiss(animated: true, completion: nil)
     }
   }

@@ -192,7 +192,7 @@
                         <barButtonItem key="rightBarButtonItem" title="저장" id="rU8-S5-gFS">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <action selector="onSaveWithSender:" destination="jjb-mF-Fcu" id="rxZ-vZ-M42"/>
+                                <action selector="onSaveWithSender:" destination="jjb-mF-Fcu" id="JUQ-rW-kYf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

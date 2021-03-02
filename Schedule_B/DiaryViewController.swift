@@ -15,7 +15,7 @@ class DiaryViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var diaryCalendarView: FSCalendar!
   
-  var memoType: Memo?
+  var editMemoType: Memo?
     
   let formatter : DateFormatter = {
     let f = DateFormatter()
@@ -51,20 +51,37 @@ class DiaryViewController: UIViewController {
     vc.memoType = selectedMemo
   }
 
-  // MARK: 메모 생성 시, 
+  // MARK: 메모 생성 및 편집
   @IBAction func unwindToMemoList(sender: UIStoryboardSegue) {
     if let sourceVC = sender.source as? DetailMemoViewController, let memo = sourceVC.memoType {
-      let newMemo = IndexPath(row: Memo.dummyMemoList.count, section: 0)
-      Memo.dummyMemoList.append(memo)
-      tableView.insertRows(at: [newMemo], with: .automatic)
+      if let selectedIndexPath = tableView.indexPathForSelectedRow {
+        // 존재하는 메모 업데이트
+        Memo.dummyMemoList[selectedIndexPath.row] = memo
+        tableView.reloadRows(at: [selectedIndexPath], with: .none)
+      } else {
+        // 새로운 메모 추가
+        let newMemoIndexPath = IndexPath(row: Memo.dummyMemoList.count, section: 0)
+        Memo.dummyMemoList.append(memo)
+        tableView.insertRows(at: [newMemoIndexPath], with: .automatic)
+      }
     }
   }
 }
+
+
 
 //
 // MARK: Extension Delegate & DataSource
 
 extension DiaryViewController: UITableViewDelegate{
+  // MARK: 메모 삭제 관련 코드
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      Memo.dummyMemoList.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    } else if editingStyle == .insert {
+    }
+  }
 }
 
 extension DiaryViewController: UITableViewDataSource{
@@ -74,12 +91,16 @@ extension DiaryViewController: UITableViewDataSource{
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell", for: indexPath) as! MemoListTableViewCell
-    let memo = Memo.dummyMemoList[indexPath.row]
     
-    cell.mainText.text = memo.mainText
-    cell.subText.text = formatter.string(from: memo.subText)
-    
+    if let exitMemo = editMemoType {
+      navigationItem.title = "메모 편집"
+      cell.mainText.text = exitMemo.mainText
+      cell.subText.text = formatter.string(from: exitMemo.subText)
+    } else {
+      let memo = Memo.dummyMemoList[indexPath.row]
+      cell.mainText.text = memo.mainText
+      cell.subText.text = formatter.string(from: memo.subText)
+    }
     return cell
   }
 }
-
